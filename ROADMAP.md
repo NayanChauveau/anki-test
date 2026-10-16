@@ -126,8 +126,8 @@ For each chapter:
 - [ ] Run `make check` after every change.
 - [ ] Build both packages and inspect representative MCQ, basic and cloze cards on desktop
   and mobile.
-- [ ] Publish each content change as a new `vX.Y.Z` GitHub release, with unchanged asset
-  names `wset3-test-en.apkg` and `wset3-test-fr.apkg`. Do not replace an existing release.
+- [x] Publish each push to `main` as the next `vX.Y.Z` patch, with unchanged asset names
+  `wset3-test-en.apkg` and `wset3-test-fr.apkg`.
 
 ## Definition of done for a chapter
 

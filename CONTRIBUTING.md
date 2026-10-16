@@ -206,18 +206,9 @@ This internal migration is not required for ordinary card or code contributions.
 
 ## Releases
 
-Pushes to `main` build the packages in CI and do not publish them. Deck Manager follows
-only a stable GitHub release whose tag is `vX.Y.Z`.
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-The workflow then attaches `wset3-test-en.apkg` and `wset3-test-fr.apkg`. Those file
-names stay the same in `v0.1.1`. Publishing again means a new tag. The workflow stops
-if that tag already has a release, or if the tag is not exactly `vX.Y.Z` (`v1.2` and
-`v1.2.0-beta` are rejected).
+A successful push to `main` publishes the next `vX.Y.Z` patch and attaches
+`wset3-test-en.apkg` and `wset3-test-fr.apkg`. Those file names do not change. The
+workflow does not replace an existing release: Deck Manager only notices a new number.
 
 Stable note GUIDs are derived from the permanent card ID and language. That is why ID
 compatibility is treated as a release contract rather than a cosmetic convention.

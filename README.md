@@ -255,24 +255,19 @@ uv run wset3-anki schema
 
 ## Releases
 
-Pull requests and pushes to `main` run the quality gate and build both packages. They
-do not publish a deck. Deck Manager ignores `latest-main`, prereleases, and any tag that
-is not `vX.Y.Z` or `X.Y.Z`.
+Every successful push to `main` publishes the next patch release: `v0.1.0`, then
+`v0.1.1`, and so on. Deck Manager treats a new `vX.Y.Z` as an update and ignores a
+file that was replaced under the same number, so the workflow never reuses a tag.
 
-Publish a deck by pushing a tag such as `v0.1.0`. The workflow attaches two assets and
-leaves their names unchanged in later versions:
+The asset names stay the same:
 
 ```text
 wset3-test-en.apkg
 wset3-test-fr.apkg
 ```
 
-A content change needs a new number (`v0.1.1`, `v0.2.0`, …). The workflow refuses to
-replace the files of a tag that already has a release. GitHub’s latest non-prerelease
-is the version Deck Manager offers.
-
-The follow URL is the asset URL of one of those releases, for example
-`…/releases/download/v0.1.0/wset3-test-fr.apkg`.
+Pull requests build the packages and do not publish. The follow URL uses the published
+number, for example `…/releases/download/v0.1.0/wset3-test-fr.apkg`.
 
 Because card IDs, model IDs and deck IDs are stable, a newer package updates existing
 notes. Contributors must therefore never rename a released card ID merely to improve
