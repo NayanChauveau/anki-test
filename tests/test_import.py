@@ -48,7 +48,7 @@ def test_progress_keeps_existing_status(tmp_path: Path) -> None:
     assert reloaded.notes["c16-0001"].target == "y.yaml"
 
 
-def test_sample_deck_keeps_four_cards(repo_root: Path) -> None:
+def test_sample_deck_keeps_five_cards(repo_root: Path) -> None:
     from wset3_anki.load import load_cards
 
     cards = load_cards(repo_root / "cards")
@@ -57,6 +57,7 @@ def test_sample_deck_keeps_four_cards(repo_root: Path) -> None:
         "sat-acidity-001",
         "sat-tannin-001",
         "sat-climate-001",
+        "sat-alcohol-001",
         "vine-cycle-early-001",
     }
     assert {card.type for card in cards} == {"mcq", "cloze"}

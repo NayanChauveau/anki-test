@@ -89,7 +89,7 @@ def test_repo_sample_cards_validate_and_build(
     repo_root: Path, templates_dir: Path, tmp_path: Path
 ) -> None:
     cards = load_cards(repo_root / "cards")
-    assert len(cards) == 4
+    assert len(cards) == 5
     path, result = build_language(
         cards,
         "en",

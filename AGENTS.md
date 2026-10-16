@@ -10,7 +10,7 @@ quality pass, and [CONTRIBUTING.md](CONTRIBUTING.md) before changing workflow.
 ## What this repo is
 
 Disposable **test copy** of the WSET 3 deck, for add-on work. It is not the daily deck.
-`cards/sample.yaml` holds four cards. Anki identity is isolated: decks
+`cards/sample.yaml` holds five cards. Anki identity is isolated: decks
 `TEST WSET 3 Wine` / `TEST WSET 3 VIN`, namespace `wset3-test`, model and deck IDs
 in the `1860000xxx` range. Do not point those IDs back at `wset3-vin` or `1760000xxx`.
 

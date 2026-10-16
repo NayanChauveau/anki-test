@@ -6,7 +6,7 @@ alwaysApply: true
 # Project
 
 Isolated test copy of the WSET 3 deck (`TEST WSET 3 Wine` / namespace `wset3-test`).
-Four sample cards in `cards/sample.yaml`. Build `.apkg` with `uv run wset3-anki`.
+Five sample cards in `cards/sample.yaml`. Build `.apkg` with `uv run wset3-anki`.
 Do not reuse the daily deck's names, GUIDs, or `1760000xxx` IDs. Not affiliated with WSET.
 
 Follow `AGENTS.md`. Card policy lives in `CONTENT_GUIDELINES.md`.

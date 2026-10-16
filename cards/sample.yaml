@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=../schema/cards.schema.json
-# Sample deck for add-on tests: three MCQ cards and one cloze card.
+# Sample deck for add-on tests: four MCQ cards and one cloze card.
 
 cards:
   - id: sat-acidity-001
@@ -99,3 +99,28 @@ cards:
       extra: |
         Flowering and fruit set establish the potential crop. Berry growth, véraison and ripening then
         lead to harvest, followed by reserve storage, leaf fall and winter dormancy.
+  - id: sat-alcohol-001
+    type: mcq
+    deck: SAT
+    tags: [sat, alcohol]
+    status: reviewed
+    en:
+      question: "Which sensation most directly indicates alcohol on the palate?"
+      choices:
+        - { text: "Warmth at the back of the throat", correct: true }
+        - { text: "A drying grip on the gums", correct: false }
+        - { text: "Persistent mouth-watering after swallowing", correct: false }
+        - { text: "A thin, watery texture", correct: false }
+      explanation: |
+        Alcohol produces a warming sensation, often noticed at the back of the throat. Tannin dries
+        the gums, and acidity makes the mouth water.
+    fr:
+      question: "Quelle sensation indique le plus directement l’alcool en bouche ?"
+      choices:
+        - { text: "Une chaleur au fond de la gorge", correct: true }
+        - { text: "Une sensation asséchante sur les gencives", correct: false }
+        - { text: "Une salivation persistante après avoir avalé", correct: false }
+        - { text: "Une texture mince et aqueuse", correct: false }
+      explanation: |
+        L’alcool procure une sensation de chaleur, souvent perçue au fond de la gorge. Les tanins
+        assèchent les gencives, et l’acidité fait saliver.
