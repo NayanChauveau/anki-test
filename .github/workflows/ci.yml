@@ -77,14 +77,25 @@ jobs:
           fi
 
           while gh api "repos/${GITHUB_REPOSITORY}/git/ref/tags/${next}" >/dev/null 2>&1 \
-            || gh release view "$next" >/dev/null 2>&1; do
+            || gh api "repos/${GITHUB_REPOSITORY}/releases/tags/${next}" >/dev/null 2>&1; do
             next="$(bump "$next")"
           done
 
           echo "Publishing ${next} from ${GITHUB_SHA}"
-          gh release create "$next" \
-            dist/wset3-test-en.apkg \
-            dist/wset3-test-fr.apkg \
-            --target "$GITHUB_SHA" \
-            --title "$next" \
-            --notes "Automated release from main at ${GITHUB_SHA}."
+          release_id="$(
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/releases" \
+              -f tag_name="$next" \
+              -f target_commitish="$GITHUB_SHA" \
+              -f name="$next" \
+              -f body="Automated release from main at ${GITHUB_SHA}." \
+              --jq .id
+          )"
+
+          for package in dist/wset3-test-en.apkg dist/wset3-test-fr.apkg; do
+            name="$(basename "$package")"
+            gh api --method POST \
+              -H "Content-Type: application/octet-stream" \
+              "repos/${GITHUB_REPOSITORY}/releases/${release_id}/assets?name=${name}" \
+              --input "$package" \
+              --silent
+          done
