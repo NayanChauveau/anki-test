@@ -1,0 +1,101 @@
+# yaml-language-server: $schema=../schema/cards.schema.json
+# Sample deck for add-on tests: three MCQ cards and one cloze card.
+
+cards:
+  - id: sat-acidity-001
+    type: mcq
+    deck: SAT
+    tags: [sat, acidity]
+    status: reviewed
+    en:
+      question: "Which sensation is the most reliable guide to a wine’s acidity level?"
+      choices:
+        - { text: "The amount and duration of salivation", correct: true }
+        - { text: "A drying grip on the gums", correct: false }
+        - { text: "Warmth at the back of the throat", correct: false }
+        - { text: "The thickness of the wine’s texture", correct: false }
+      explanation: |
+        Acidity stimulates saliva: the quicker and more persistent the mouth-watering response, the
+        higher the perceived acidity. Tannin dries the gums, while alcohol produces warmth.
+    fr:
+      question: "Quelle sensation constitue l’indicateur le plus fiable du niveau d’acidité d’un vin ?"
+      choices:
+        - { text: "La quantité et la durée de la salivation", correct: true }
+        - { text: "Une sensation asséchante sur les gencives", correct: false }
+        - { text: "Une chaleur au fond de la gorge", correct: false }
+        - { text: "L’épaisseur de la texture du vin", correct: false }
+      explanation: |
+        L’acidité stimule la salivation : plus la bouche salive rapidement et longtemps, plus
+        l’acidité perçue est élevée. Les tanins assèchent les gencives, tandis que l’alcool procure
+        une sensation de chaleur.
+  - id: sat-tannin-001
+    type: mcq
+    deck: SAT
+    tags: [sat, tannin]
+    status: reviewed
+    en:
+      question: "Which sensation most directly indicates tannin on the palate?"
+      choices:
+        - { text: "A drying, astringent grip on the gums", correct: true }
+        - { text: "Persistent salivation after swallowing", correct: false }
+        - { text: "A warming sensation in the throat", correct: false }
+        - { text: "A sweet taste on the tip of the tongue", correct: false }
+      explanation: |
+        Tannin binds with proteins in saliva, creating dryness and grip that are often easiest to
+        feel on the gums. Acidity causes salivation, and alcohol contributes warmth.
+    fr:
+      question: "Quelle sensation indique le plus directement la présence de tanins en bouche ?"
+      choices:
+        - { text: "Une sensation asséchante et astringente sur les gencives", correct: true }
+        - { text: "Une salivation persistante qui se prolonge après avoir avalé", correct: false }
+        - { text: "Une sensation de chaleur dans la gorge", correct: false }
+        - { text: "Un goût sucré sur le bout de la langue", correct: false }
+      explanation: |
+        Les tanins se lient aux protéines de la salive et créent une sensation d’assèchement et
+        d’accroche, souvent plus facile à percevoir sur les gencives. L’acidité fait saliver et
+        l’alcool apporte de la chaleur.
+  - id: sat-climate-001
+    type: mcq
+    deck: SAT
+    tags: [sat, climate]
+    status: reviewed
+    en:
+      question: "Which structural profile most strongly suggests grapes ripened in relatively cool conditions?"
+      choices:
+        - { text: "High acidity, moderate alcohol and a lighter body", correct: true }
+        - { text: "Low acidity, high alcohol and a full body", correct: false }
+        - { text: "Moderate acidity, high alcohol and a full body", correct: false }
+        - { text: "Low acidity, moderate alcohol and a lighter body", correct: false }
+      explanation: |
+        Cooler conditions generally slow sugar accumulation and acid loss, so wines often combine
+        fresher acidity with less alcohol and body. Variety, yield and winemaking can modify the
+        pattern, so it is evidence rather than proof of origin.
+    fr:
+      question: "Quel profil structurel suggère le plus fortement que les raisins ont mûri dans des conditions relativement fraîches ?"
+      choices:
+        - { text: "Acidité élevée, alcool modéré et corps plutôt léger", correct: true }
+        - { text: "Faible acidité, alcool élevé et corps puissant", correct: false }
+        - { text: "Acidité moyenne, alcool élevé et corps puissant", correct: false }
+        - { text: "Faible acidité, alcool modéré et corps plutôt léger", correct: false }
+      explanation: |
+        Des conditions fraîches ralentissent généralement l’accumulation de sucre et la perte
+        d’acidité : les vins associent donc souvent une acidité plus vive à moins d’alcool et de
+        corps. Le cépage, le rendement et la vinification peuvent modifier ce schéma ; il s’agit
+        d’un indice, non d’une preuve d’origine.
+  - id: vine-cycle-early-001
+    type: cloze
+    deck: The Vine
+    tags: [vine, growth-cycle]
+    status: reviewed
+    source_id: c03-0005
+    review:
+      fact_check: pass
+      sources: [known-fact]
+    en:
+      text: |
+        After winter rest, the vine's growing season opens in this order:
+        {{c1::budburst}}, then {{c2::early shoot and leaf growth}}, then
+        {{c3::flowering and fruit set}}.
+      extra: |
+        Flowering and fruit set establish the potential crop. Berry growth, véraison and ripening then
+        lead to harvest, followed by reserve storage, leaf fall and winter dormancy.

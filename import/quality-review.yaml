@@ -1,0 +1,8 @@
+# Suivi relecture du deck de test. Le ledger complet reste dans anki-deck-wset-3.
+updated: 2026-10-16
+
+chapters:
+  sample:
+    file: cards/sample.yaml
+    status: sample
+    notes: Four cards kept for add-on tests.
